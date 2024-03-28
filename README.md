@@ -4,7 +4,12 @@
 - 시간 : 매주 목요일 10시
 - 장소 : 정기관 215호
 - 예상 진행 기간 : 5주
-- 스터디 자료 : [김수영 대표 ROS2 강의](https://www.youtube.com/playlist?list=PLieE0qnqO2kTNCznjLX_AaXe2hNJ-IpVQ)
+- 스터디 자료 :
+    [김수영 대표 ROS2 강의](https://www.youtube.com/playlist?list=PLieE0qnqO2kTNCznjLX_AaXe2hNJ-IpVQ)
+    / [강의 노트](https://puzzling-cashew-c4c.notion.site/ROS-2-for-G-Camp-6f86b29e997e445badb69cc0af825a71)
+    / [GITHUB](https://github.com/Road-Balance/gcamp_ros2_basic)
+
+[ROS2 Official Webpage](https://docs.ros.org/en/foxy/)
 
 ## 스터디 진행 방법
 
