@@ -17,6 +17,19 @@ RC Car를 만드는 상황에서 Node를 어떻게 구성해야 할까?
 
 각각의 장단점을 알고 프로그래밍 방식을 알아야 한다.
 
+Service는 실행시키고 목표를 달성했는지 여부는 확인하지 않지만 action은 목표가 달성된 것을 확인해서 succeed가 된다.
+
+### Action
+
+- Client : subscriber
+- Server : publisher
+
+Action은 세 개의 기능으로 이루어져있다.
+
+- Goal service : 목표치에 도달했는지 지속적으로 체크한다.
+- 토픽을 통해 피드백을 주는 서비스
+- 결과값을 전달하는 서비스
+
 ## ROS2 Node Command
 
 **단일 노드 실행 명령어**
@@ -54,15 +67,19 @@ anthony@anthony-B760M-AORUS-ELITE:~/gcamp_ros2_ws$ ros2 node list
 /transform_listener_impl_55c6bad93600
 ```
 
-```ros
+```py
 anthony@anthony-B760M-AORUS-ELITE:~/gcamp_ros2_ws$ ros2 node info /skidbot/teleop_twist_keyboard
 /skidbot/teleop_twist_keyboard
+
+# Topic
 Subscribers:
 
 Publishers:
 /parameter_events: rcl_interfaces/msg/ParameterEvent
 /rosout: rcl_interfaces/msg/Log
 /skidbot/cmd_vel: geometry_msgs/msg/Twist
+
+# Service
 Service Servers:
 /skidbot/teleop_twist_keyboard/describe_parameters: rcl_interfaces/srv/DescribeParameters
 /skidbot/teleop_twist_keyboard/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
@@ -70,8 +87,10 @@ Service Servers:
 /skidbot/teleop_twist_keyboard/list_parameters: rcl_interfaces/srv/ListParameters
 /skidbot/teleop_twist_keyboard/set_parameters: rcl_interfaces/srv/SetParameters
 /skidbot/teleop_twist_keyboard/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+
 Service Clients:
 
+# Action
 Action Servers:
 
 Action Clients:
@@ -108,3 +127,7 @@ urdf : modeling file
 파일 관점 : 관련된 라이브러리, 모델링 파일, 설정 파일들을 모아둔 폴더
 
 기능 관점 : 시뮬레이션, 하드웨어, 모델링, 원격 조종 등으로 분리시킨 모듈
+
+## Reference
+
+[ROS2를 배워보자 - 07.Action 이해하기](https://www.youtube.com/watch?v=ZswhM4yFMJQ)
