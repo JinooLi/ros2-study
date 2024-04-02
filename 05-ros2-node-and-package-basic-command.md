@@ -2,20 +2,9 @@
 
 Node는 ROS2가 동작의 단위이고, package는 프로그램의 단위이다.
 
-## Node
-
-- ROS 프로그램은 node들과 node들 간의 통신으로 구성된다.
-
-RC Car를 만드는 상황에서 Node를 어떻게 구성해야 할까?
-
-- Camera Node : 카메라로부터 RGB-D 데이터를 받는다.
-- LiDAR Node : 라이다로부터 point cloud 데이터를 받는다.
-- 판단 Node : camera와 lidar로부터 수집된 데이터로부터 의미를 추출하고 판단을 내린다.
-- Moter Node : 판단한 결과를 바탕으로 모터를 제어한다.
-
 ## Topic, Service, Action
 
-각각의 장단점을 알고 프로그래밍 방식을 알아야 한다.
+<img src="img/commu.png" />
 
 Service는 실행시키고 목표를 달성했는지 여부는 확인하지 않지만 action은 목표가 달성된 것을 확인해서 succeed가 된다.
 
@@ -29,6 +18,17 @@ Action은 세 개의 기능으로 이루어져있다.
 - Goal service : 목표치에 도달했는지 지속적으로 체크한다.
 - 토픽을 통해 피드백을 주는 서비스
 - 결과값을 전달하는 서비스
+
+## Node
+
+- ROS 프로그램은 node들과 node들 간의 통신으로 구성된다.
+
+RC Car를 만드는 상황에서 Node를 어떻게 구성해야 할까?
+
+- Camera Node : 카메라로부터 RGB-D 데이터를 받는다.
+- LiDAR Node : 라이다로부터 point cloud 데이터를 받는다.
+- 판단 Node : camera와 lidar로부터 수집된 데이터로부터 의미를 추출하고 판단을 내린다.
+- Moter Node : 판단한 결과를 바탕으로 모터를 제어한다.
 
 ## ROS2 Node Command
 
@@ -130,4 +130,6 @@ urdf : modeling file
 
 ## Reference
 
-[ROS2를 배워보자 - 07.Action 이해하기](https://www.youtube.com/watch?v=ZswhM4yFMJQ)
+- [ROS2 DOCS : Topics vs Services vs Actions](https://docs.ros.org/en/foxy/How-To-Guides/Topics-Services-Actions.html#topics)
+- [ROS2 하루에 입문하기 - 02장 ROS2 사용방법(Topic, Service, Action 등)](https://robertchoi.gitbook.io/ros2/02-ros2)
+- [ROS2를 배워보자 - 07.Action 이해하기](https://www.youtube.com/watch?v=ZswhM4yFMJQ)
