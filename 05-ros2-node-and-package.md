@@ -1,10 +1,8 @@
 # Node and Package
 
-Node는 ROS2가 동작의 단위이고, package는 프로그램의 단위이다.
-
 - Node : ROS에서 최소 단위의 실행 가능한 프로세스, 하나의 목적
 - 각 node는 메시지 통신(topic, service, action)을 통해 데이터를 주고 받는다.
-- 각 node는 역할이 있다.
+- 각 node는 역할이 있다. (publisher, subscriber, service client, service server, action client, action server)
 
 ## Topic, Service, Action
 
@@ -14,25 +12,12 @@ Node는 ROS2가 동작의 단위이고, package는 프로그램의 단위이다.
 
 |Topic|Service|Action|
 |:---:|:---:|:---:|
-|Publisher Node -> Subscriber Node|Service Client Node <-> Service Server Node|Action Client Node <-> Action Server Node|
-|정보를 보내는 Publisher와 정보를 받는 Subscriber가 Topic 메시지 형태로 정보를 송수신하는 것|Client가 호출할 때만 Server가 데이터를 제공한다.|Client가 Server에게 goal을 보내면 Server는 goal를 확인할 후 feedback과 result를 반환한다. 하나의 응답만을 반환하는 Service와 달리 꾸준한 feedback을 제공한다.|
+|publisher node -> subscriber node|service client node <-> service server node|action client node <-> action server node|
+|정보를 보내는 publisher와 정보를 받는 subscriber가 topic 메시지 형태로 정보를 송수신하는 것|client가 호출할 때만 server가 데이터를 제공한다.|client가 server에게 goal을 보내면 server는 goal를 확인할 후 feedback과 result를 반환한다. 하나의 응답만을 반환하는 Service와 달리 꾸준한 feedback을 제공한다.|
 |단방향|쌍방향|쌍방향|
 |비동기식|동기식|비동기식|
 |연속적 데이터|이산적 데이터|이산적 데이터|
 |1:N, N:1, N:N|||
-
-Service는 실행시키고 목표를 달성했는지 여부는 확인하지 않지만 action은 목표가 달성된 것을 확인해서 succeed가 된다.
-
-### Action
-
-- Client : subscriber
-- Server : publisher
-
-Action은 세 개의 기능으로 이루어져있다.
-
-- Goal service : 목표치에 도달했는지 지속적으로 체크한다.
-- 토픽을 통해 피드백을 주는 서비스
-- 결과값을 전달하는 서비스
 
 ## Node
 
@@ -45,7 +30,7 @@ RC Car를 만드는 상황에서 Node를 어떻게 구성해야 할까?
 - 판단 Node : camera와 lidar로부터 수집된 데이터로부터 의미를 추출하고 판단을 내린다.
 - Moter Node : 판단한 결과를 바탕으로 모터를 제어한다.
 
-## ROS2 Node Command
+### Node Command
 
 **단일 노드 실행 명령어**
 
@@ -111,7 +96,7 @@ Action Servers:
 Action Clients:
 ```
 
-## Rqt
+### Rqt
 
 **Rqt 실행 명령어**
 
