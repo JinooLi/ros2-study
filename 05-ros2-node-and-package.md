@@ -1,12 +1,10 @@
 # Node and Package
 
 - Node : ROS에서 최소 단위의 실행 가능한 프로세스, 하나의 목적
-- 각 node는 메시지 통신(topic, service, action)을 통해 데이터를 주고 받는다.
+- 각 node는 메시지 통신을 통해 데이터를 주고 받는다. (topic, service, action)
 - 각 node는 역할이 있다. (publisher, subscriber, service client, service server, action client, action server)
 
 ## Topic, Service, Action
-
-세 가지 방식의 interface
 
 <img src="img/commu.png" />
 
@@ -17,18 +15,9 @@
 |단방향|쌍방향|쌍방향|
 |비동기식|동기식|비동기식|
 |연속적 데이터|이산적 데이터|이산적 데이터|
-|1:N, N:1, N:N|||
+|1:N, N:1, N:N|1:1|1:1|
 
 ## Node
-
-- ROS 프로그램은 node들과 node들 간의 통신으로 구성된다.
-
-RC Car를 만드는 상황에서 Node를 어떻게 구성해야 할까?
-
-- Camera Node : 카메라로부터 RGB-D 데이터를 받는다.
-- LiDAR Node : 라이다로부터 point cloud 데이터를 받는다.
-- 판단 Node : camera와 lidar로부터 수집된 데이터로부터 의미를 추출하고 판단을 내린다.
-- Moter Node : 판단한 결과를 바탕으로 모터를 제어한다.
 
 ### Node Command
 
