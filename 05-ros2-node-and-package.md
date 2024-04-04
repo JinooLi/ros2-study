@@ -8,7 +8,6 @@
 
 ![](./img/commu.png)
 
-
 |Topic|Service|Action|
 |:---:|:---:|:---:|
 |publisher node -> subscriber node|service client node <-> service server node|action client node <-> action server node|
