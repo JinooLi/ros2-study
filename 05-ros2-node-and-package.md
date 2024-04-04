@@ -8,15 +8,16 @@
 
 ![](./img/commu.png)
 
-|                              Topic                              |                   Service                   |                                 Action                                 |
-| :-------------------------------------------------------------: | :-----------------------------------------: | :--------------------------------------------------------------------: |
-|                publisher node -> subscriber node                | service client node <-> service server node |               action client node <-> action server node                |
-| 정보를 보내는 publisher와 정보를 받는 subscriber가 topic 메시지 형태로 정보를 송수신하는 것 |      client가 호출할 때만 server가 데이터를 제공한다.      | client가 server에게 goal을 보내면 server는 goal를 확인할 후 feedback과 result를 반환한다. |
-|                        짧은 시간 동안 실행되는 작업                         |                                             |                            긴 시간 동안 실행되는 작업                             |
-|                               단방향                               |                     쌍방향                     |                                  쌍방향                                   |
-|                              비동기식                               |                     동기식                     |                                  비동기식                                  |
-|                             연속적 데이터                             |                   이산적 데이터                   |                                이산적 데이터                                 |
-|                          1:N, N:1, N:N                          |                     1:1                     |                                  1:1                                   |
+
+|Topic|Service|Action|
+|:---:|:---:|:---:|
+|publisher node -> subscriber node|service client node <-> service server node|action client node <-> action server node|
+|정보를 보내는 publisher와 정보를 받는 subscriber가 topic 메시지 형태로 정보를 송수신하는 것|client가 호출할 때만 server가 데이터를 제공한다.|client가 server에게 goal을 보내면 server는 goal를 확인할 후 feedback과 result를 반환한다.|
+|짧은 시간 동안 실행되는 작업||긴 시간 동안 실행되는 작업|
+|단방향|쌍방향|쌍방향|
+|비동기식|동기식|비동기식|
+|연속적 데이터|이산적 데이터|이산적 데이터|
+|1:N, N:1, N:N|1:1|1:1|
 
 ## Node
 
