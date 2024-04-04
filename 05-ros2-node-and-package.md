@@ -6,7 +6,8 @@
 
 ## Topic, Service, Action
 
-<img src="img/commu.png" />
+![](./img/commu.png)
+
 
 |Topic|Service|Action|
 |:---:|:---:|:---:|
@@ -24,27 +25,27 @@
 
 **단일 노드 실행 명령어**
 
-```ros
+```bash
 ros2 run [PACKAGE_NAME] [PROGRAM_NAME]
 ```
 
 **실행 중인 Node들의 리스트를 확인하는 명령어**
 
-```ros
+```bash
 ros2 node list
 ```
 
 **특정 Node의 정보 살펴보기**
 
-```ros
+```bash
 ros2 node info [NODE_NAME]
 ```
 
 키보드를 이용해 GAZEBO 상의 모바일 로봇을 control하는 예제
 
-<img src="img/node.png" />
+![](img/node.png)
 
-```ros
+```bash
 anthony@anthony-B760M-AORUS-ELITE:~/gcamp_ros2_ws$ ros2 node list
 /gazebo
 /joint_state_publisher
@@ -57,7 +58,7 @@ anthony@anthony-B760M-AORUS-ELITE:~/gcamp_ros2_ws$ ros2 node list
 /transform_listener_impl_55c6bad93600
 ```
 
-```py
+```bash
 anthony@anthony-B760M-AORUS-ELITE:~/gcamp_ros2_ws$ ros2 node info /skidbot/teleop_twist_keyboard
 
 /skidbot/teleop_twist_keyboard
@@ -91,11 +92,10 @@ Action Clients:
 
 **Rqt 실행 명령어**
 
-```ros
+```bash
 rqt_graph
 ```
-
-<img src="img/rqt.png" />
+![](img/rqt.png)
 
 - 각 동그라미는 node를 의미한다.
 - 화살표는 한 node에서 다른 node로 데이터를 보내고 있다는 것이다.
